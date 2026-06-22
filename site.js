@@ -80,11 +80,6 @@ const SPEAKERS = [{
   aff: "Familiar Machines & Magic, USA",
   photo: "photos/bahar-irfan.jpg"
 }, {
-  name: "Dhruv Shah",
-  aff: "Princeton University · Google DeepMind, USA",
-  photo: "photos/dhruv-shah.jpg",
-  role: "Panelist"
-}, {
   name: "Gabriel Skantze",
   aff: "KTH · Furhat Robotics, Sweden",
   photo: "photos/gabriel-skantze.jpg",
