@@ -92,7 +92,7 @@ const SPEAKERS = [{
 }];
 const ORGANIZERS = [{
   name: "Jason Liu",
-  aff: "Brown University, USA",
+  aff: "MIT, USA",
   photo: "photos/jason-liu.jpg"
 }, {
   name: "Vardhan Dongre",
