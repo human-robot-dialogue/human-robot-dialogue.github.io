@@ -112,7 +112,7 @@ const ORGANIZERS = [{
   photo: "photos/abrar-anwar.jpeg"
 }, {
   name: "Ishika Singh",
-  aff: "University of Southern California, USA",
+  aff: "NVIDIA, USA",
   photo: "photos/ishika-singh.jpg"
 }];
 const ADVISORY = [{
