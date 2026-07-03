@@ -108,7 +108,7 @@ const ORGANIZERS = [{
   photo: "photos/xiaolin-fang.png"
 }, {
   name: "Abrar Anwar",
-  aff: "University of Southern California, USA",
+  aff: "NVIDIA, USA",
   photo: "photos/abrar-anwar.jpeg"
 }, {
   name: "Ishika Singh",
