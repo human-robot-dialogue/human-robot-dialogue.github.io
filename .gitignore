@@ -4,3 +4,8 @@ node_modules/
 .vscode/
 .idea/
 build-tools/
+
+# Local flyer assets — not published
+flyer.html
+flyer.pdf
+flyer.png

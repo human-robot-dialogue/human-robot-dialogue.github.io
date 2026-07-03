@@ -64,9 +64,9 @@ const TOPICS = [{
   items: ["What are the challenges and opportunities in deploying human–robot dialogue systems across personal assistants, education, healthcare, and beyond?"]
 }];
 const SPEAKERS = [{
-  name: "Joyce Y. Chai",
-  aff: "University of Michigan, USA",
-  photo: "photos/joyce-chai.jpg"
+  name: "Ankit Goyal",
+  aff: "NVIDIA, USA",
+  photo: "photos/ankit.png"
 }, {
   name: "Jacob Andreas",
   aff: "MIT, USA",
@@ -203,19 +203,19 @@ const PROGRAM = [{
 }];
 const DATES = [{
   label: "Paper submission",
-  value: "TBA",
-  state: "tba"
+  value: "Aug 3, 2026",
+  state: "open"
 }, {
   label: "Notification",
-  value: "TBA",
-  state: "tba"
+  value: "Aug 30, 2026",
+  state: "open"
 }, {
-  label: "Camera-ready",
-  value: "TBA",
-  state: "tba"
+  label: "Final version",
+  value: "Sept 12, 2026",
+  state: "open"
 }, {
   label: "Workshop",
-  value: "Sept 27, 2026",
+  value: "Oct 1, 2026",
   state: "now"
 }];
 
@@ -556,7 +556,7 @@ function Hero({
     className: "sep"
   }, "/"), /*#__PURE__*/React.createElement("span", null, "Pittsburgh, USA"), /*#__PURE__*/React.createElement("span", {
     className: "sep"
-  }, "/"), /*#__PURE__*/React.createElement("span", null, "Sept 27, 2026")), /*#__PURE__*/React.createElement("div", {
+  }, "/"), /*#__PURE__*/React.createElement("span", null, "Oct 1, 2026")), /*#__PURE__*/React.createElement("div", {
     className: "hero-grid"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", {
     className: "hero-title"
@@ -566,7 +566,7 @@ function Hero({
     className: "hero-sub"
   }, "Leveraging dialogue to improve robot learning and human-robot interaction. A half-day workshop bringing together researchers across robotics, NLP, HRI, and dialogue systems to chart what embodied communication looks like next."), layout === "editorial" && /*#__PURE__*/React.createElement("dl", {
     className: "hero-meta"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Date"), /*#__PURE__*/React.createElement("dd", null, "Sept 27, 2026")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Venue"), /*#__PURE__*/React.createElement("dd", null, "Pittsburgh, USA")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Format"), /*#__PURE__*/React.createElement("dd", null, "Half-day, in-person")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Submissions"), /*#__PURE__*/React.createElement("dd", null, "TBA")))), layout === "schematic" && /*#__PURE__*/React.createElement(Schematic, null), layout === "split" && /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Date"), /*#__PURE__*/React.createElement("dd", null, "Oct 1, 2026")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Venue"), /*#__PURE__*/React.createElement("dd", null, "Pittsburgh, USA")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Format"), /*#__PURE__*/React.createElement("dd", null, "Half-day, in-person")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Submissions"), /*#__PURE__*/React.createElement("dd", null, "Aug 3, 2026")))), layout === "schematic" && /*#__PURE__*/React.createElement(Schematic, null), layout === "split" && /*#__PURE__*/React.createElement("div", {
     className: "info-card-list"
   }, /*#__PURE__*/React.createElement("div", {
     className: "info-card"
@@ -574,7 +574,7 @@ function Hero({
     className: "label"
   }, "Date"), /*#__PURE__*/React.createElement("span", {
     className: "value"
-  }, "Sept 27, 2026")), /*#__PURE__*/React.createElement("div", {
+  }, "Oct 1, 2026")), /*#__PURE__*/React.createElement("div", {
     className: "info-card"
   }, /*#__PURE__*/React.createElement("span", {
     className: "label"
@@ -592,7 +592,7 @@ function Hero({
     className: "label"
   }, "Submissions"), /*#__PURE__*/React.createElement("span", {
     className: "value"
-  }, "TBA"))))));
+  }, "Aug 3, 2026"))))));
 }
 function Overview() {
   return /*#__PURE__*/React.createElement("section", {
@@ -667,9 +667,11 @@ function CFP() {
     label: "Call for papers"
   }, "Contributions that push the field."), /*#__PURE__*/React.createElement("div", {
     className: "cfp-card"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "The Call for Papers will be announced soon."), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics. Submission portal, page limits, and review schedule will be posted here.")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("ul", {
+    className: "cfp-dates"
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " August 3, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " August 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 12, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:00 AM – 12:00 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 – October 1, 2026 · Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("div", {
     className: "cfp-badge"
-  }, "To be announced"))));
+  }, "Submit by Aug 3, 2026"))));
 }
 function Program() {
   return /*#__PURE__*/React.createElement("section", {
@@ -751,7 +753,7 @@ function Footer() {
       color: "var(--muted)",
       fontSize: 13
     }
-  }, "A half-day workshop on leveraging dialogue to improve robot learning and human-robot interaction.")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, "Where & when"), /*#__PURE__*/React.createElement("p", null, "Sept 27, 2026", /*#__PURE__*/React.createElement("br", null), "Pittsburgh, USA"), /*#__PURE__*/React.createElement("p", {
+  }, "A half-day workshop on leveraging dialogue to improve robot learning and human-robot interaction.")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, "Where & when"), /*#__PURE__*/React.createElement("p", null, "Oct 1, 2026", /*#__PURE__*/React.createElement("br", null), "Pittsburgh, USA"), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 12
     }
