@@ -73,7 +73,7 @@ const SPEAKERS = [{
   photo: "photos/jacob-andreas.jpg"
 }, {
   name: "Jesse Thomason",
-  aff: "USC, USA",
+  aff: "Georgia Tech, USA",
   photo: "photos/jesse-thomason.jpg"
 }, {
   name: "Bahar Irfan",
@@ -125,7 +125,7 @@ const ADVISORY = [{
   photo: "photos/dylan-hadfield-menell.jpg"
 }, {
   name: "Jesse Thomason",
-  aff: "University of Southern California, USA",
+  aff: "Georgia Tech, USA",
   photo: "photos/jesse-thomason.jpg"
 }, {
   name: "Stefanie Tellex",
