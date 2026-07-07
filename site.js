@@ -667,7 +667,9 @@ function CFP() {
     label: "Call for papers"
   }, "Contributions that push the field."), /*#__PURE__*/React.createElement("div", {
     className: "cfp-card"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("ul", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("p", {
+    className: "cfp-nonarchival"
+  }, /*#__PURE__*/React.createElement("strong", null, "Non-archival:"), " all submissions will be made available on the workshop website as non-archival reports, making submissions to future conferences and journals possible."), /*#__PURE__*/React.createElement("ul", {
     className: "cfp-dates"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " August 3, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " August 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 12, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:00 AM – 12:00 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 – October 1, 2026 · Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
     className: "cfp-badge",
