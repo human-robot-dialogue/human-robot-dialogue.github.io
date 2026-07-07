@@ -629,7 +629,7 @@ function Topics() {
     className: "container"
   }, /*#__PURE__*/React.createElement(SectionHead, {
     label: "Discussion topics"
-  }, "The questions we\u2019re putting on the table."), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "topic-list"
   }, TOPICS.map(t => /*#__PURE__*/React.createElement("div", {
     className: "topic",
@@ -663,9 +663,7 @@ function CFP() {
     id: "cfp"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/React.createElement(SectionHead, {
-    label: "Call for papers"
-  }, "Contributions that push the field."), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "cfp-card"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("p", {
     className: "cfp-nonarchival"

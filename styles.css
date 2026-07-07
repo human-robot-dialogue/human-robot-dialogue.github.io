@@ -459,7 +459,7 @@ section:last-of-type { padding-bottom: var(--gap-section); }
   margin-bottom: 28px;
 }
 .section-head h2 {
-  font-size: clamp(44px, 6.4vw, 96px);
+  font-size: clamp(36px, 5vw, 72px);
   line-height: 0.98;
   letter-spacing: -0.025em;
   font-family: var(--display);
