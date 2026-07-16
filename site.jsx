@@ -480,15 +480,38 @@ function CFP() {
         </SectionHead>
         <div className="cfp-card">
           <div>
-            <h3>The Call for Papers will be announced soon.</h3>
+            <h3>Call for Papers</h3>
             <p>
               We welcome short and long papers on human-robot dialogue, language
               grounding, embodied communication, dialogue policy learning,
-              evaluation, datasets, and adjacent topics. Submission portal,
-              page limits, and review schedule will be posted here.
+              evaluation, datasets, and adjacent topics.
             </p>
+            <p>
+              We invite 2&ndash;4 page extended abstracts and 4&ndash;8 page papers
+              (suggested page limits), in standard two-column IEEE Conference
+              Manuscript Template.
+            </p>
+            <p className="cfp-nonarchival">
+              <strong>Non-archival:</strong> all submissions will be made available
+              on the workshop website as non-archival reports, making submissions to
+              future conferences and journals possible.
+            </p>
+            <ul className="cfp-dates">
+              <li><strong>Submission deadline:</strong> August 3, 2026</li>
+              <li><strong>Paper notification:</strong> August 30, 2026</li>
+              <li><strong>Final version deadline:</strong> September 12, 2026</li>
+              <li><strong>Workshop date:</strong> Thursday, October 1, 2026 (Half-Day, 8:00 AM &ndash; 12:00 PM EDT)</li>
+              <li><strong>IROS 2026 conference:</strong> September 27 &ndash; October 1, 2026 &middot; Pittsburgh, PA, USA</li>
+            </ul>
           </div>
-          <div className="cfp-badge">To be announced</div>
+          <a
+            className="cfp-badge"
+            href="https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/HRD"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Submit on OpenReview &rarr;
+          </a>
         </div>
       </div>
     </section>
