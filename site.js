@@ -203,7 +203,7 @@ const PROGRAM = [{
 }];
 const DATES = [{
   label: "Paper submission",
-  value: "Aug 3, 2026",
+  value: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("s", null, "Aug 3, 2026"), " Aug 21, 2026"),
   state: "open"
 }, {
   label: "Notification",
@@ -566,7 +566,7 @@ function Hero({
     className: "hero-sub"
   }, "Leveraging dialogue to improve robot learning and human-robot interaction. A half-day workshop bringing together researchers across robotics, NLP, HRI, and dialogue systems to chart what embodied communication looks like next."), layout === "editorial" && /*#__PURE__*/React.createElement("dl", {
     className: "hero-meta"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Date"), /*#__PURE__*/React.createElement("dd", null, "Oct 1, 2026")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Venue"), /*#__PURE__*/React.createElement("dd", null, "Pittsburgh, USA")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Format"), /*#__PURE__*/React.createElement("dd", null, "Half-day, in-person")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Submissions"), /*#__PURE__*/React.createElement("dd", null, "Aug 3, 2026")))), layout === "schematic" && /*#__PURE__*/React.createElement(Schematic, null), layout === "split" && /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Date"), /*#__PURE__*/React.createElement("dd", null, "Oct 1, 2026")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Venue"), /*#__PURE__*/React.createElement("dd", null, "Pittsburgh, USA")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Format"), /*#__PURE__*/React.createElement("dd", null, "Half-day, in-person")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Submissions"), /*#__PURE__*/React.createElement("dd", null, "Aug 21, 2026")))), layout === "schematic" && /*#__PURE__*/React.createElement(Schematic, null), layout === "split" && /*#__PURE__*/React.createElement("div", {
     className: "info-card-list"
   }, /*#__PURE__*/React.createElement("div", {
     className: "info-card"
@@ -592,7 +592,7 @@ function Hero({
     className: "label"
   }, "Submissions"), /*#__PURE__*/React.createElement("span", {
     className: "value"
-  }, "Aug 3, 2026"))))));
+  }, "Aug 21, 2026"))))));
 }
 function Overview() {
   return /*#__PURE__*/React.createElement("section", {
