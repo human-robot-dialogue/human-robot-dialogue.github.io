@@ -203,7 +203,7 @@ const PROGRAM = [{
 }];
 const DATES = [{
   label: "Paper submission",
-  value: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("s", null, "Aug 3, 2026"), " Aug 21, 2026"),
+  value: "Aug 21, 2026",
   state: "open"
 }, {
   label: "Notification",
