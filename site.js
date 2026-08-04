@@ -203,7 +203,7 @@ const PROGRAM = [{
 }];
 const DATES = [{
   label: "Paper submission",
-  value: "Aug 21, 2026",
+  value: "Aug 17, 2026",
   state: "open"
 }, {
   label: "Notification",
@@ -566,7 +566,7 @@ function Hero({
     className: "hero-sub"
   }, "Leveraging dialogue to improve robot learning and human-robot interaction. A half-day workshop bringing together researchers across robotics, NLP, HRI, and dialogue systems to chart what embodied communication looks like next."), layout === "editorial" && /*#__PURE__*/React.createElement("dl", {
     className: "hero-meta"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Date"), /*#__PURE__*/React.createElement("dd", null, "Oct 1, 2026")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Venue"), /*#__PURE__*/React.createElement("dd", null, "Pittsburgh, USA")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Format"), /*#__PURE__*/React.createElement("dd", null, "Half-day, in-person")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Submissions"), /*#__PURE__*/React.createElement("dd", null, "Aug 21, 2026")))), layout === "schematic" && /*#__PURE__*/React.createElement(Schematic, null), layout === "split" && /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Date"), /*#__PURE__*/React.createElement("dd", null, "Oct 1, 2026")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Venue"), /*#__PURE__*/React.createElement("dd", null, "Pittsburgh, USA")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Format"), /*#__PURE__*/React.createElement("dd", null, "Half-day, in-person")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("dt", null, "Submissions"), /*#__PURE__*/React.createElement("dd", null, "Aug 17, 2026")))), layout === "schematic" && /*#__PURE__*/React.createElement(Schematic, null), layout === "split" && /*#__PURE__*/React.createElement("div", {
     className: "info-card-list"
   }, /*#__PURE__*/React.createElement("div", {
     className: "info-card"
@@ -592,7 +592,7 @@ function Hero({
     className: "label"
   }, "Submissions"), /*#__PURE__*/React.createElement("span", {
     className: "value"
-  }, "Aug 21, 2026"))))));
+  }, "Aug 17, 2026"))))));
 }
 function Overview() {
   return /*#__PURE__*/React.createElement("section", {
@@ -669,7 +669,7 @@ function CFP() {
     className: "cfp-nonarchival"
   }, /*#__PURE__*/React.createElement("strong", null, "Non-archival:"), " all submissions will be made available on the workshop website as non-archival reports, making submissions to future conferences and journals possible."), /*#__PURE__*/React.createElement("ul", {
     className: "cfp-dates"
-  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " ", /*#__PURE__*/React.createElement("s", null, "August 3, 2026"), " August 21, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " August 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 12, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:00 AM – 12:00 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 – October 1, 2026 · Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " ", /*#__PURE__*/React.createElement("s", null, "August 3, 2026"), " August 17, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " August 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 12, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:00 AM – 12:00 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 – October 1, 2026 · Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
     className: "cfp-badge",
     href: "https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/HRD",
     target: "_blank",
