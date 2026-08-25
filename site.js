@@ -207,7 +207,7 @@ const DATES = [{
   state: "open"
 }, {
   label: "Notification",
-  value: "Aug 30, 2026",
+  value: "Sep 6, 2026",
   state: "open"
 }, {
   label: "Final version",
