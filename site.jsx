@@ -499,7 +499,7 @@ function CFP() {
             <ul className="cfp-dates">
               <li><strong>Submission deadline:</strong> August 3, 2026</li>
               <li><strong>Paper notification:</strong> August 30, 2026</li>
-              <li><strong>Final version deadline:</strong> September 12, 2026</li>
+              <li><strong>Final version deadline:</strong> September 30, 2026</li>
               <li><strong>Workshop date:</strong> Thursday, October 1, 2026 (Half-Day, 8:00 AM &ndash; 12:00 PM EDT)</li>
               <li><strong>IROS 2026 conference:</strong> September 27 &ndash; October 1, 2026 &middot; Pittsburgh, PA, USA</li>
             </ul>
