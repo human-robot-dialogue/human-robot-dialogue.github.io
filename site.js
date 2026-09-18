@@ -141,63 +141,48 @@ const ADVISORY = [{
   photo: "photos/julie-shah.jpg"
 }];
 const PROGRAM = [{
-  t: "08:50 – 09:00",
-  title: "Opening remarks",
+  t: "08:30 \u2013 08:35",
+  title: "Introduction",
   who: "Organizers",
   kind: "open"
 }, {
-  t: "09:00 – 09:40",
-  title: "Grounding language in shared physical context",
-  who: "Speaker · TBD",
-  kind: "keynote"
+  t: "08:35 \u2013 09:05",
+  title: "TBD",
+  who: "Ankit Goyal",
+  kind: "invited"
 }, {
-  t: "09:40 – 10:20",
-  title: "Dialogue policies for embodied agents",
-  who: "Speaker · TBD",
-  kind: "keynote"
+  t: "09:05 \u2013 09:35",
+  title: "Just Asking Questions",
+  who: "Jacob Andreas \u00b7 remote",
+  kind: "invited"
 }, {
-  t: "10:20 – 10:50",
-  title: "Coffee & posters",
-  who: "",
-  kind: "break"
+  t: "09:35 \u2013 10:05",
+  title: "Grounding Language in Actions, Multimodal Observations, and Robots",
+  who: "Jesse Thomason",
+  kind: "invited"
 }, {
-  t: "10:50 – 11:30",
-  title: "Learning to ask: clarification under uncertainty",
-  who: "Speaker · TBD",
-  kind: "keynote"
-}, {
-  t: "11:30 – 12:15",
-  title: "Contributed talks (3 × 15 min)",
+  t: "10:05 \u2013 10:30",
+  title: "Spotlight talks",
   who: "Accepted papers",
   kind: "talks"
 }, {
-  t: "12:15 – 13:30",
-  title: "Lunch",
-  who: "",
+  t: "10:30 \u2013 11:00",
+  title: "Poster session & coffee break",
+  who: "Accepted papers",
   kind: "break"
 }, {
-  t: "13:30 – 14:10",
-  title: "Multimodality beyond language",
-  who: "Speaker · TBD",
-  kind: "keynote"
+  t: "11:00 \u2013 11:30",
+  title: "Detecting User Enjoyment in Conversations to Recover from Failures",
+  who: "Bahar Irfan",
+  kind: "invited"
 }, {
-  t: "14:10 – 14:50",
-  title: "Evaluating dialogue: benchmarks & beyond",
-  who: "Speaker · TBD",
-  kind: "keynote"
-}, {
-  t: "14:50 – 15:20",
-  title: "Coffee & posters",
-  who: "",
-  kind: "break"
-}, {
-  t: "15:20 – 16:30",
-  title: "Panel · Where human-robot dialogue goes next",
-  who: "All speakers",
+  t: "11:30 \u2013 12:20",
+  title: "The future of human\u2013robot dialogue",
+  who: "Dhruv Shah \u00b7 Gabriel Skantze \u00b7 Matthew Marge",
   kind: "panel"
 }, {
-  t: "16:30 – 17:00",
-  title: "Closing & community discussion",
+  t: "12:20 \u2013 12:30",
+  title: "Awards & closing remarks",
   who: "Organizers",
   kind: "open"
 }];
@@ -211,7 +196,7 @@ const DATES = [{
   state: "open"
 }, {
   label: "Final version",
-  value: "Sept 12, 2026",
+  value: "Sept 30, 2026",
   state: "open"
 }, {
   label: "Workshop",
@@ -669,7 +654,7 @@ function CFP() {
     className: "cfp-nonarchival"
   }, /*#__PURE__*/React.createElement("strong", null, "Non-archival:"), " all submissions will be made available on the workshop website as non-archival reports, making submissions to future conferences and journals possible."), /*#__PURE__*/React.createElement("ul", {
     className: "cfp-dates"
-  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " ", /*#__PURE__*/React.createElement("s", null, "August 3, 2026"), " August 17, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " September 8, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 12, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:00 AM – 12:00 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 – October 1, 2026 · Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " ", /*#__PURE__*/React.createElement("s", null, "August 3, 2026"), " August 17, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " September 8, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:30 AM – 12:30 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 – October 1, 2026 · Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
     className: "cfp-badge",
     href: "https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/HRD",
     target: "_blank",
@@ -683,9 +668,20 @@ function Program() {
     className: "container"
   }, /*#__PURE__*/React.createElement(SectionHead, {
     label: "Program"
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "program-tba"
-  }, "To be announced soon\u2026")));
+  }, "Thursday, October 1, 2026 \u00b7 8:30 AM \u2013 12:30 PM EDT \u00b7 Pittsburgh, PA."), /*#__PURE__*/React.createElement("div", {
+    className: "schedule"
+  }, PROGRAM.map((r, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: `sched-row kind-${r.kind}`
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "t"
+  }, r.t), /*#__PURE__*/React.createElement("div", {
+    className: "title"
+  }, r.title), /*#__PURE__*/React.createElement("div", {
+    className: "who"
+  }, r.who)))), /*#__PURE__*/React.createElement("div", {
+    className: "sched-note"
+  }, "All times Eastern \u00b7 Schedule and talk titles are tentative and subject to change.")));
 }
 function Speakers() {
   return /*#__PURE__*/React.createElement("section", {

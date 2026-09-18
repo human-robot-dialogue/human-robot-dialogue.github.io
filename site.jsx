@@ -72,7 +72,7 @@ const TOPICS = [
 ];
 
 const SPEAKERS = [
-  { name: "Joyce Y. Chai",   aff: "University of Michigan, USA",            photo: "photos/joyce-chai.jpg" },
+  { name: "Ankit Goyal",     aff: "NVIDIA, USA",                            photo: "photos/ankit.png" },
   { name: "Jacob Andreas",   aff: "MIT, USA",                               photo: "photos/jacob-andreas.jpg" },
   { name: "Jesse Thomason",  aff: "USC, USA",                               photo: "photos/jesse-thomason.jpg" },
   { name: "Bahar Irfan",     aff: "Familiar Machines & Magic, USA",        photo: "photos/bahar-irfan.jpg" },
@@ -100,25 +100,22 @@ const ADVISORY = [
 ];
 
 const PROGRAM = [
-  { t: "08:50 – 09:00", title: "Opening remarks", who: "Organizers", kind: "open" },
-  { t: "09:00 – 09:40", title: "Grounding language in shared physical context", who: "Speaker · TBD", kind: "keynote" },
-  { t: "09:40 – 10:20", title: "Dialogue policies for embodied agents",         who: "Speaker · TBD", kind: "keynote" },
-  { t: "10:20 – 10:50", title: "Coffee & posters",                              who: "",              kind: "break" },
-  { t: "10:50 – 11:30", title: "Learning to ask: clarification under uncertainty", who: "Speaker · TBD", kind: "keynote" },
-  { t: "11:30 – 12:15", title: "Contributed talks (3 × 15 min)",                who: "Accepted papers", kind: "talks" },
-  { t: "12:15 – 13:30", title: "Lunch",                                         who: "",              kind: "break" },
-  { t: "13:30 – 14:10", title: "Multimodality beyond language",                 who: "Speaker · TBD", kind: "keynote" },
-  { t: "14:10 – 14:50", title: "Evaluating dialogue: benchmarks & beyond",      who: "Speaker · TBD", kind: "keynote" },
-  { t: "14:50 – 15:20", title: "Coffee & posters",                              who: "",              kind: "break" },
-  { t: "15:20 – 16:30", title: "Panel · Where human-robot dialogue goes next",  who: "All speakers",  kind: "panel" },
-  { t: "16:30 – 17:00", title: "Closing & community discussion",                who: "Organizers",    kind: "open" },
+  { t: "08:30 – 08:35", title: "Introduction",                                                       who: "Organizers",                                   kind: "open" },
+  { t: "08:35 – 09:05", title: "TBD",                                                               who: "Ankit Goyal",                                  kind: "invited" },
+  { t: "09:05 – 09:35", title: "Just Asking Questions",                                              who: "Jacob Andreas · remote",                       kind: "invited" },
+  { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", who: "Jesse Thomason",                               kind: "invited" },
+  { t: "10:05 – 10:30", title: "Spotlight talks",                                                    who: "Accepted papers",                              kind: "talks" },
+  { t: "10:30 – 11:00", title: "Poster session & coffee break",                                      who: "Accepted papers",                              kind: "break" },
+  { t: "11:00 – 11:30", title: "Detecting User Enjoyment in Conversations to Recover from Failures", who: "Bahar Irfan",                                  kind: "invited" },
+  { t: "11:30 – 12:20", title: "The future of human–robot dialogue",                                 who: "Dhruv Shah · Gabriel Skantze · Matthew Marge", kind: "panel" },
+  { t: "12:20 – 12:30", title: "Awards & closing remarks",                                           who: "Organizers",                                   kind: "open" },
 ];
 
 const DATES = [
-  { label: "Paper submission", value: "TBA",            state: "tba" },
-  { label: "Notification",     value: "TBA",            state: "tba" },
-  { label: "Camera-ready",     value: "TBA",            state: "tba" },
-  { label: "Workshop",         value: "Sept 27, 2026",  state: "now" },
+  { label: "Paper submission", value: "Aug 17, 2026",  state: "open" },
+  { label: "Notification",     value: "Sept 6, 2026",  state: "open" },
+  { label: "Final version",    value: "Sept 30, 2026", state: "open" },
+  { label: "Workshop",         value: "Oct 1, 2026",   state: "now" },
 ];
 
 /* ================================================================ utils */
@@ -322,7 +319,7 @@ function Hero({ layout }) {
           <span className="sep">/</span>
           <span>Pittsburgh, USA</span>
           <span className="sep">/</span>
-          <span>Sept 27, 2026</span>
+          <span>Oct 1, 2026</span>
         </div>
 
         <div className="hero-grid">
@@ -338,10 +335,10 @@ function Hero({ layout }) {
 
             {layout === "editorial" && (
               <dl className="hero-meta">
-                <div><dt>Date</dt><dd>Sept 27, 2026</dd></div>
+                <div><dt>Date</dt><dd>Oct 1, 2026</dd></div>
                 <div><dt>Venue</dt><dd>Pittsburgh, USA</dd></div>
                 <div><dt>Format</dt><dd>Half-day, in-person</dd></div>
-                <div><dt>Submissions</dt><dd>TBA</dd></div>
+                <div><dt>Submissions</dt><dd>Aug 17, 2026</dd></div>
               </dl>
             )}
           </div>
@@ -352,7 +349,7 @@ function Hero({ layout }) {
             <div className="info-card-list">
               <div className="info-card">
                 <span className="label">Date</span>
-                <span className="value">Sept 27, 2026</span>
+                <span className="value">Oct 1, 2026</span>
               </div>
               <div className="info-card">
                 <span className="label">Venue</span>
@@ -364,7 +361,7 @@ function Hero({ layout }) {
               </div>
               <div className="info-card">
                 <span className="label">Submissions</span>
-                <span className="value">TBA</span>
+                <span className="value">Aug 17, 2026</span>
               </div>
             </div>
           )}
@@ -497,10 +494,10 @@ function CFP() {
               future conferences and journals possible.
             </p>
             <ul className="cfp-dates">
-              <li><strong>Submission deadline:</strong> August 3, 2026</li>
-              <li><strong>Paper notification:</strong> August 30, 2026</li>
+              <li><strong>Submission deadline:</strong> <s>August 3, 2026</s> August 17, 2026</li>
+              <li><strong>Paper notification:</strong> September 8, 2026</li>
               <li><strong>Final version deadline:</strong> September 30, 2026</li>
-              <li><strong>Workshop date:</strong> Thursday, October 1, 2026 (Half-Day, 8:00 AM &ndash; 12:00 PM EDT)</li>
+              <li><strong>Workshop date:</strong> Thursday, October 1, 2026 (Half-Day, 8:30 AM &ndash; 12:30 PM EDT)</li>
               <li><strong>IROS 2026 conference:</strong> September 27 &ndash; October 1, 2026 &middot; Pittsburgh, PA, USA</li>
             </ul>
           </div>
@@ -522,9 +519,9 @@ function Program() {
   return (
     <section id="program">
       <div className="container">
-        <SectionHead label="Program" />
-        <div className="program-tba">To be announced soon&hellip;</div>
-        {/* Program schedule hidden until finalized.
+        <SectionHead label="Program">
+          Thursday, October 1, 2026 &middot; 8:30 AM &ndash; 12:30 PM EDT &middot; Pittsburgh, PA.
+        </SectionHead>
         <div className="schedule">
           {PROGRAM.map((r, i) => (
             <div key={i} className={`sched-row kind-${r.kind}`}>
@@ -535,9 +532,8 @@ function Program() {
           ))}
         </div>
         <div className="sched-note">
-          All times Eastern · Final program announced closer to the workshop date.
+          All times Eastern · Schedule and talk titles are tentative and subject to change.
         </div>
-        */}
       </div>
     </section>
   );
@@ -608,7 +604,7 @@ function Footer() {
           </div>
           <div>
             <h4>Where & when</h4>
-            <p>Sept 27, 2026<br />Pittsburgh, USA</p>
+            <p>Oct 1, 2026<br />Pittsburgh, USA</p>
             <p style={{ marginTop: 12 }}>Co-located with IROS 2026.</p>
           </div>
           <div>
