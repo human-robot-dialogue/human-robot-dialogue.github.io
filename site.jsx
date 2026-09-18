@@ -104,11 +104,10 @@ const PROGRAM = [
   { t: "08:35 – 09:05", title: "TBD",                                                               who: "Ankit Goyal",                                  kind: "invited" },
   { t: "09:05 – 09:35", title: "Just Asking Questions",                                              who: "Jacob Andreas · remote",                       kind: "invited" },
   { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", who: "Jesse Thomason",                               kind: "invited" },
-  { t: "10:05 – 10:30", title: "Spotlight talks",                                                    who: "Accepted papers",                              kind: "talks" },
-  { t: "10:30 – 11:00", title: "Poster session & coffee break",                                      who: "Accepted papers",                              kind: "break" },
-  { t: "11:00 – 11:30", title: "Detecting User Enjoyment in Conversations to Recover from Failures", who: "Bahar Irfan",                                  kind: "invited" },
-  { t: "11:30 – 12:20", title: "The future of human–robot dialogue",                                 who: "Dhruv Shah · Gabriel Skantze · Matthew Marge", kind: "panel" },
-  { t: "12:20 – 12:30", title: "Awards & closing remarks",                                           who: "Organizers",                                   kind: "open" },
+  { t: "10:05 – 11:15", title: "Poster session & coffee break",                                      who: "Accepted papers",                              kind: "break" },
+  { t: "11:15 – 11:45", title: "Detecting User Enjoyment in Conversations to Recover from Failures", who: "Bahar Irfan",                                  kind: "invited" },
+  { t: "11:45 – 12:25", title: "The future of human–robot dialogue",                                 who: "Dhruv Shah · Gabriel Skantze · Matthew Marge", kind: "panel" },
+  { t: "12:25 – 12:30", title: "Awards & closing remarks",                                           who: "Organizers",                                   kind: "open" },
 ];
 
 const DATES = [

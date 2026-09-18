@@ -161,27 +161,22 @@ const PROGRAM = [{
   who: "Jesse Thomason",
   kind: "invited"
 }, {
-  t: "10:05 \u2013 10:30",
-  title: "Spotlight talks",
-  who: "Accepted papers",
-  kind: "talks"
-}, {
-  t: "10:30 \u2013 11:00",
+  t: "10:05 \u2013 11:15",
   title: "Poster session & coffee break",
   who: "Accepted papers",
   kind: "break"
 }, {
-  t: "11:00 \u2013 11:30",
+  t: "11:15 \u2013 11:45",
   title: "Detecting User Enjoyment in Conversations to Recover from Failures",
   who: "Bahar Irfan",
   kind: "invited"
 }, {
-  t: "11:30 \u2013 12:20",
+  t: "11:45 \u2013 12:25",
   title: "The future of human\u2013robot dialogue",
   who: "Dhruv Shah \u00b7 Gabriel Skantze \u00b7 Matthew Marge",
   kind: "panel"
 }, {
-  t: "12:20 \u2013 12:30",
+  t: "12:25 \u2013 12:30",
   title: "Awards & closing remarks",
   who: "Organizers",
   kind: "open"
