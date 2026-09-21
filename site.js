@@ -147,7 +147,7 @@ const PROGRAM = [{
   kind: "open"
 }, {
   t: "08:35 – 09:05",
-  title: "TBD",
+  title: "From Ambiguous Instructions to Grounded Actions: Reasoning for Robot Foundation Models",
   speakers: ["Ankit Goyal"],
   kind: "invited"
 }, {

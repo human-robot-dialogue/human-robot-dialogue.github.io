@@ -100,7 +100,7 @@ const ADVISORY = [
 
 const PROGRAM = [
   { t: "08:30 – 08:35", title: "Introduction",                                                       who: "Organizers",      kind: "open" },
-  { t: "08:35 – 09:05", title: "TBD",                                                               speakers: ["Ankit Goyal"],    kind: "invited" },
+  { t: "08:35 – 09:05", title: "From Ambiguous Instructions to Grounded Actions: Reasoning for Robot Foundation Models", speakers: ["Ankit Goyal"], kind: "invited" },
   { t: "09:05 – 09:35", title: "Just Asking Questions",                                              speakers: ["Jacob Andreas"],  kind: "invited", note: "Remote" },
   { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", speakers: ["Jesse Thomason"], kind: "invited" },
   { t: "10:05 – 11:15", title: "Poster session & coffee break",                                      who: "Accepted papers", kind: "break" },
