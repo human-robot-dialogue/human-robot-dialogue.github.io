@@ -910,6 +910,39 @@ a.cfp-badge:hover {
 @media (max-width: 520px) { .people-grid { grid-template-columns: 1fr; } }
 
 .person { display: flex; flex-direction: column; gap: 14px; }
+
+/* committees: organizing + advisory side by side, smaller portraits */
+.committees {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  column-gap: clamp(40px, 5vw, 80px);
+}
+.committee {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;   /* headings and grids line up across columns */
+  scroll-margin-top: 90px;
+}
+.committee .section-head h2 { font-size: clamp(32px, 3.6vw, 56px); }
+.people-grid--compact {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 20px;
+  align-content: start;
+}
+.people-grid--compact .person { gap: 10px; }
+.people-grid--compact .person .name { font-size: 17px; }
+.people-grid--compact .person .aff { font-size: 10.5px; }
+.people-grid--compact .person .role-tag { font-size: 8.5px; top: 8px; left: 8px; padding: 3px 6px; }
+.people-grid--compact .person .corner { width: 12px; height: 12px; bottom: 8px; right: 8px; }
+.people-grid--compact .monogram { font-size: clamp(32px, 3vw, 44px); }
+@media (max-width: 960px) {
+  .committees { grid-template-columns: 1fr; grid-template-rows: none; }
+  .committee { grid-row: auto; grid-template-rows: none; display: block; }
+  .committee + .committee { margin-top: var(--gap-section); }
+}
+@media (max-width: 1100px) { .people-grid.people-grid--compact { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px)  { .people-grid.people-grid--compact { grid-template-columns: repeat(2, 1fr); } }
 .person .photo {
   aspect-ratio: 1 / 1;
   border: 1px solid var(--rule);

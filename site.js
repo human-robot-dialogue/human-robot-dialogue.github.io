@@ -765,19 +765,35 @@ function Committee({
   people,
   role
 }) {
-  return /*#__PURE__*/React.createElement("section", {
-    id: id
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "container"
+  return /*#__PURE__*/React.createElement("div", {
+    id: id,
+    className: "committee"
   }, /*#__PURE__*/React.createElement(SectionHead, {
     label: label
   }, title), /*#__PURE__*/React.createElement("div", {
-    className: "people-grid"
+    className: "people-grid people-grid--compact"
   }, people.map(p => /*#__PURE__*/React.createElement(Person, {
     key: p.name,
     p: p,
     role: role
-  })))));
+  }))));
+}
+function Committees() {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "organizers"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container committees"
+  }, /*#__PURE__*/React.createElement(Committee, {
+    id: "organizing",
+    label: "Organizing committee",
+    people: ORGANIZERS,
+    role: "Organizer"
+  }), /*#__PURE__*/React.createElement(Committee, {
+    id: "advisory",
+    label: "Advisory committee",
+    people: ADVISORY,
+    role: "Advisory"
+  })));
 }
 function Sponsors() {
   return /*#__PURE__*/React.createElement("section", {
@@ -947,17 +963,7 @@ function App() {
     onToggleTheme: toggleTheme
   }), /*#__PURE__*/React.createElement(Hero, {
     layout: t.heroLayout
-  }), /*#__PURE__*/React.createElement(Overview, null), /*#__PURE__*/React.createElement(Topics, null), /*#__PURE__*/React.createElement(Dates, null), /*#__PURE__*/React.createElement(CFP, null), /*#__PURE__*/React.createElement(Program, null), /*#__PURE__*/React.createElement(Speakers, null), /*#__PURE__*/React.createElement(Committee, {
-    id: "organizers",
-    label: "Organizing committee",
-    people: ORGANIZERS,
-    role: "Organizer"
-  }), /*#__PURE__*/React.createElement(Committee, {
-    id: "advisory",
-    label: "Advisory committee",
-    people: ADVISORY,
-    role: "Advisory"
-  }), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(SiteTweaks, {
+  }), /*#__PURE__*/React.createElement(Overview, null), /*#__PURE__*/React.createElement(Topics, null), /*#__PURE__*/React.createElement(Dates, null), /*#__PURE__*/React.createElement(CFP, null), /*#__PURE__*/React.createElement(Program, null), /*#__PURE__*/React.createElement(Speakers, null), /*#__PURE__*/React.createElement(Committees, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(SiteTweaks, {
     t: t,
     setTweak: setTweak
   }));

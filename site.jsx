@@ -611,14 +611,23 @@ function Speakers() {
 
 function Committee({ id, label, title, people, role }) {
   return (
-    <section id={id}>
-      <div className="container">
-        <SectionHead label={label}>{title}</SectionHead>
-        <div className="people-grid">
-          {people.map((p) => (
-            <Person key={p.name} p={p} role={role} />
-          ))}
-        </div>
+    <div id={id} className="committee">
+      <SectionHead label={label}>{title}</SectionHead>
+      <div className="people-grid people-grid--compact">
+        {people.map((p) => (
+          <Person key={p.name} p={p} role={role} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Committees() {
+  return (
+    <section id="organizers">
+      <div className="container committees">
+        <Committee id="organizing" label="Organizing committee" people={ORGANIZERS} role="Organizer" />
+        <Committee id="advisory"   label="Advisory committee"   people={ADVISORY}   role="Advisory" />
       </div>
     </section>
   );
@@ -783,8 +792,7 @@ function App() {
       <CFP />
       <Program />
       <Speakers />
-      <Committee id="organizers" label="Organizing committee" people={ORGANIZERS} role="Organizer" />
-      <Committee id="advisory"   label="Advisory committee"   people={ADVISORY}   role="Advisory" />
+      <Committees />
       {/* <Sponsors /> */}
       <Footer />
       <SiteTweaks t={t} setTweak={setTweak} />
