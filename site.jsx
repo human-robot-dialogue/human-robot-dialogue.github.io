@@ -76,7 +76,6 @@ const SPEAKERS = [
   { name: "Jacob Andreas",   aff: "MIT, USA",                               photo: "photos/jacob-andreas.jpg" },
   { name: "Jesse Thomason",  aff: "USC, USA",                               photo: "photos/jesse-thomason.jpg" },
   { name: "Bahar Irfan",     aff: "Familiar Machines & Magic, USA",        photo: "photos/bahar-irfan.jpg" },
-  { name: "Dhruv Shah",      aff: "Princeton University · Google DeepMind, USA", photo: "photos/dhruv-shah.jpg",     role: "Panelist" },
   { name: "Gabriel Skantze", aff: "KTH · Furhat Robotics, Sweden",           photo: "photos/gabriel-skantze.jpg", role: "Panelist" },
   { name: "Matthew Marge",   aff: "DARPA, USA",                             photo: "photos/matthew-marge.jpg",   role: "Panelist" },
 ];
@@ -100,15 +99,17 @@ const ADVISORY = [
 ];
 
 const PROGRAM = [
-  { t: "08:30 – 08:35", title: "Introduction",                                                       who: "Organizers",                                   kind: "open" },
-  { t: "08:35 – 09:05", title: "TBD",                                                               who: "Ankit Goyal",                                  kind: "invited" },
-  { t: "09:05 – 09:35", title: "Just Asking Questions",                                              who: "Jacob Andreas · remote",                       kind: "invited" },
-  { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", who: "Jesse Thomason",                               kind: "invited" },
-  { t: "10:05 – 11:15", title: "Poster session & coffee break",                                      who: "Accepted papers",                              kind: "break" },
-  { t: "11:15 – 11:45", title: "Detecting User Enjoyment in Conversations to Recover from Failures", who: "Bahar Irfan",                                  kind: "invited" },
-  { t: "11:45 – 12:25", title: "The future of human–robot dialogue",                                 who: "Dhruv Shah · Gabriel Skantze · Matthew Marge", kind: "panel" },
-  { t: "12:25 – 12:30", title: "Awards & closing remarks",                                           who: "Organizers",                                   kind: "open" },
+  { t: "08:30 – 08:35", title: "Introduction",                                                       who: "Organizers",      kind: "open" },
+  { t: "08:35 – 09:05", title: "TBD",                                                               speakers: ["Ankit Goyal"],    kind: "invited" },
+  { t: "09:05 – 09:35", title: "Just Asking Questions",                                              speakers: ["Jacob Andreas"],  kind: "invited", note: "Remote" },
+  { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", speakers: ["Jesse Thomason"], kind: "invited" },
+  { t: "10:05 – 11:15", title: "Poster session & coffee break",                                      who: "Accepted papers", kind: "break" },
+  { t: "11:15 – 11:45", title: "Detecting User Enjoyment in Conversations to Recover from Failures", speakers: ["Bahar Irfan"],    kind: "invited" },
+  { t: "11:45 – 12:25", title: "The future of human–robot dialogue",                                 speakers: ["Gabriel Skantze", "Matthew Marge"], kind: "panel" },
+  { t: "12:25 – 12:30", title: "Awards & closing remarks",                                           who: "Organizers",      kind: "open" },
 ];
+
+const KIND_LABEL = { keynote: "Keynote", invited: "Invited talk", talks: "Contributed", panel: "Panel discussion", break: "Break" };
 
 const DATES = [
   { label: "Paper submission", value: "Aug 17, 2026",  state: "open" },
@@ -487,6 +488,13 @@ function CFP() {
               (suggested page limits), in standard two-column IEEE Conference
               Manuscript Template.
             </p>
+            <p className="cfp-anon">
+              <strong>Review policy — single-blind:</strong> in line with IROS
+              2026 rules, submissions should <em>not</em> be anonymized. Include
+              all author names and affiliations on the manuscript; reviewer
+              identities remain confidential, and reviewers are required to treat
+              submitted material as confidential.
+            </p>
             <p className="cfp-nonarchival">
               <strong>Non-archival:</strong> all submissions will be made available
               on the workshop website as non-archival reports, making submissions to
@@ -514,6 +522,21 @@ function CFP() {
   );
 }
 
+function SchedSpeaker({ name }) {
+  const p = SPEAKERS.find((x) => x.name === name) || { name };
+  return (
+    <div className="sched-speaker">
+      <span className="sched-avatar">
+        {p.photo ? <img src={p.photo} alt={p.name} loading="lazy" /> : <Monogram name={p.name} />}
+      </span>
+      <span className="sched-speaker-text">
+        <span className="sched-speaker-name">{p.name}</span>
+        {p.aff && <span className="sched-speaker-aff">{p.aff}</span>}
+      </span>
+    </div>
+  );
+}
+
 function Program() {
   return (
     <section id="program">
@@ -521,17 +544,50 @@ function Program() {
         <SectionHead label="Program">
           Thursday, October 1, 2026 &middot; 8:30 AM &ndash; 12:30 PM EDT &middot; Pittsburgh, PA.
         </SectionHead>
-        <div className="schedule">
-          {PROGRAM.map((r, i) => (
-            <div key={i} className={`sched-row kind-${r.kind}`}>
-              <div className="t">{r.t}</div>
-              <div className="title">{r.title}</div>
-              <div className="who">{r.who}</div>
-            </div>
-          ))}
-        </div>
+        <ol className="schedule">
+          {PROGRAM.map((r, i) => {
+            const [start, end] = r.t.split(/\s*–\s*/);
+            const solo = r.speakers && r.speakers.length === 1 ? SPEAKERS.find((x) => x.name === r.speakers[0]) : null;
+            return (
+              <li key={i} className={`sched-row kind-${r.kind}${solo ? " has-media" : ""}`}>
+                <div className="sched-time">
+                  <span className="start">{start}</span>
+                  <span className="end">{end}</span>
+                </div>
+                {solo && (
+                  <div className="sched-media">
+                    {solo.photo ? <img src={solo.photo} alt={solo.name} loading="lazy" /> : <Monogram name={solo.name} />}
+                  </div>
+                )}
+                <div className="sched-body">
+                  {KIND_LABEL[r.kind] && (
+                    <span className="sched-kind">
+                      {KIND_LABEL[r.kind]}
+                      {r.note && <em>{r.note}</em>}
+                    </span>
+                  )}
+                  <h3 className={r.title === "TBD" ? "sched-title is-tba" : "sched-title"}>
+                    {r.title === "TBD" ? "Title to be announced" : r.title}
+                  </h3>
+                  {solo && (
+                    <div className="sched-byline">
+                      <span className="sched-speaker-name">{solo.name}</span>
+                      <span className="sched-speaker-aff">{solo.aff}</span>
+                    </div>
+                  )}
+                  {r.speakers && !solo && (
+                    <div className="sched-panel">
+                      {r.speakers.map((n) => <SchedSpeaker key={n} name={n} />)}
+                    </div>
+                  )}
+                  {r.who && <div className="sched-who">{r.who}</div>}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
         <div className="sched-note">
-          All times Eastern · Schedule and talk titles are tentative and subject to change.
+          All times Eastern &middot; Schedule and talk titles are tentative and subject to change.
         </div>
       </div>
     </section>

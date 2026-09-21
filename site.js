@@ -141,46 +141,54 @@ const ADVISORY = [{
   photo: "photos/julie-shah.jpg"
 }];
 const PROGRAM = [{
-  t: "08:30 \u2013 08:35",
+  t: "08:30 – 08:35",
   title: "Introduction",
   who: "Organizers",
   kind: "open"
 }, {
-  t: "08:35 \u2013 09:05",
+  t: "08:35 – 09:05",
   title: "TBD",
-  who: "Ankit Goyal",
+  speakers: ["Ankit Goyal"],
   kind: "invited"
 }, {
-  t: "09:05 \u2013 09:35",
+  t: "09:05 – 09:35",
   title: "Just Asking Questions",
-  who: "Jacob Andreas \u00b7 remote",
-  kind: "invited"
+  speakers: ["Jacob Andreas"],
+  kind: "invited",
+  note: "Remote"
 }, {
-  t: "09:35 \u2013 10:05",
+  t: "09:35 – 10:05",
   title: "Grounding Language in Actions, Multimodal Observations, and Robots",
-  who: "Jesse Thomason",
+  speakers: ["Jesse Thomason"],
   kind: "invited"
 }, {
-  t: "10:05 \u2013 11:15",
+  t: "10:05 – 11:15",
   title: "Poster session & coffee break",
   who: "Accepted papers",
   kind: "break"
 }, {
-  t: "11:15 \u2013 11:45",
+  t: "11:15 – 11:45",
   title: "Detecting User Enjoyment in Conversations to Recover from Failures",
-  who: "Bahar Irfan",
+  speakers: ["Bahar Irfan"],
   kind: "invited"
 }, {
-  t: "11:45 \u2013 12:25",
-  title: "The future of human\u2013robot dialogue",
-  who: "Dhruv Shah \u00b7 Gabriel Skantze \u00b7 Matthew Marge",
+  t: "11:45 – 12:25",
+  title: "The future of human–robot dialogue",
+  speakers: ["Gabriel Skantze", "Matthew Marge"],
   kind: "panel"
 }, {
-  t: "12:25 \u2013 12:30",
+  t: "12:25 – 12:30",
   title: "Awards & closing remarks",
   who: "Organizers",
   kind: "open"
 }];
+const KIND_LABEL = {
+  keynote: "Keynote",
+  invited: "Invited talk",
+  talks: "Contributed",
+  panel: "Panel discussion",
+  break: "Break"
+};
 const DATES = [{
   label: "Paper submission",
   value: "Aug 17, 2026",
@@ -646,6 +654,8 @@ function CFP() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "cfp-card"
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("p", null, "We invite 2–4 page extended abstracts and 4–8 page papers (suggested page limits), in standard two-column IEEE Conference Manuscript Template."), /*#__PURE__*/React.createElement("p", {
+    className: "cfp-anon"
+  }, /*#__PURE__*/React.createElement("strong", null, "Review policy \u2014 single-blind:"), " in line with IROS 2026 rules, submissions should ", /*#__PURE__*/React.createElement("em", null, "not"), " be anonymized. Include all author names and affiliations on the manuscript; reviewer identities remain confidential, and reviewers are required to treat submitted material as confidential."), /*#__PURE__*/React.createElement("p", {
     className: "cfp-nonarchival"
   }, /*#__PURE__*/React.createElement("strong", null, "Non-archival:"), " all submissions will be made available on the workshop website as non-archival reports, making submissions to future conferences and journals possible."), /*#__PURE__*/React.createElement("ul", {
     className: "cfp-dates"
@@ -656,6 +666,30 @@ function CFP() {
     rel: "noopener noreferrer"
   }, "Submit on OpenReview →"))));
 }
+function SchedSpeaker({
+  name
+}) {
+  const p = SPEAKERS.find(x => x.name === name) || {
+    name
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "sched-speaker"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sched-avatar"
+  }, p.photo ? /*#__PURE__*/React.createElement("img", {
+    src: p.photo,
+    alt: p.name,
+    loading: "lazy"
+  }) : /*#__PURE__*/React.createElement(Monogram, {
+    name: p.name
+  })), /*#__PURE__*/React.createElement("span", {
+    className: "sched-speaker-text"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sched-speaker-name"
+  }, p.name), p.aff && /*#__PURE__*/React.createElement("span", {
+    className: "sched-speaker-aff"
+  }, p.aff)));
+}
 function Program() {
   return /*#__PURE__*/React.createElement("section", {
     id: "program"
@@ -663,20 +697,51 @@ function Program() {
     className: "container"
   }, /*#__PURE__*/React.createElement(SectionHead, {
     label: "Program"
-  }, "Thursday, October 1, 2026 \u00b7 8:30 AM \u2013 12:30 PM EDT \u00b7 Pittsburgh, PA."), /*#__PURE__*/React.createElement("div", {
+  }, "Thursday, October 1, 2026 \xB7 8:30 AM \u2013 12:30 PM EDT \xB7 Pittsburgh, PA."), /*#__PURE__*/React.createElement("ol", {
     className: "schedule"
-  }, PROGRAM.map((r, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    className: `sched-row kind-${r.kind}`
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "t"
-  }, r.t), /*#__PURE__*/React.createElement("div", {
-    className: "title"
-  }, r.title), /*#__PURE__*/React.createElement("div", {
-    className: "who"
-  }, r.who)))), /*#__PURE__*/React.createElement("div", {
+  }, PROGRAM.map((r, i) => {
+    const [start, end] = r.t.split(/\s*–\s*/);
+    const solo = r.speakers && r.speakers.length === 1 ? SPEAKERS.find(x => x.name === r.speakers[0]) : null;
+    return /*#__PURE__*/React.createElement("li", {
+      key: i,
+      className: `sched-row kind-${r.kind}${solo ? " has-media" : ""}`
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "sched-time"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "start"
+    }, start), /*#__PURE__*/React.createElement("span", {
+      className: "end"
+    }, end)), solo && /*#__PURE__*/React.createElement("div", {
+      className: "sched-media"
+    }, solo.photo ? /*#__PURE__*/React.createElement("img", {
+      src: solo.photo,
+      alt: solo.name,
+      loading: "lazy"
+    }) : /*#__PURE__*/React.createElement(Monogram, {
+      name: solo.name
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "sched-body"
+    }, KIND_LABEL[r.kind] && /*#__PURE__*/React.createElement("span", {
+      className: "sched-kind"
+    }, KIND_LABEL[r.kind], r.note && /*#__PURE__*/React.createElement("em", null, r.note)), /*#__PURE__*/React.createElement("h3", {
+      className: r.title === "TBD" ? "sched-title is-tba" : "sched-title"
+    }, r.title === "TBD" ? "Title to be announced" : r.title), solo && /*#__PURE__*/React.createElement("div", {
+      className: "sched-byline"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "sched-speaker-name"
+    }, solo.name), /*#__PURE__*/React.createElement("span", {
+      className: "sched-speaker-aff"
+    }, solo.aff)), r.speakers && !solo && /*#__PURE__*/React.createElement("div", {
+      className: "sched-panel"
+    }, r.speakers.map(n => /*#__PURE__*/React.createElement(SchedSpeaker, {
+      key: n,
+      name: n
+    }))), r.who && /*#__PURE__*/React.createElement("div", {
+      className: "sched-who"
+    }, r.who)));
+  })), /*#__PURE__*/React.createElement("div", {
     className: "sched-note"
-  }, "All times Eastern \u00b7 Schedule and talk titles are tentative and subject to change.")));
+  }, "All times Eastern \xB7 Schedule and talk titles are tentative and subject to change.")));
 }
 function Speakers() {
   return /*#__PURE__*/React.createElement("section", {
