@@ -931,8 +931,8 @@ a.cfp-badge:hover {
   align-content: start;
 }
 .people-grid--compact .person { gap: 10px; }
-.people-grid--compact .person .name { font-size: 17px; }
-.people-grid--compact .person .aff { font-size: 10.5px; }
+.people-grid--compact .person .name { font-size: 16px; letter-spacing: -0.02em; }
+.people-grid--compact .person .aff { font-size: 14px; margin-top: -4px; }
 .people-grid--compact .person .role-tag { font-size: 8.5px; top: 8px; left: 8px; padding: 3px 6px; }
 .people-grid--compact .person .corner { width: 12px; height: 12px; bottom: 8px; right: 8px; }
 .people-grid--compact .monogram { font-size: clamp(32px, 3vw, 44px); }
@@ -1015,20 +1015,21 @@ a.cfp-badge:hover {
   z-index: 2;
 }
 .person .name {
-  font-family: var(--display);
-  font-size: 20px;
-  line-height: 1.15;
+  font-family: var(--body);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.25;
   color: var(--fg);
   letter-spacing: -0.01em;
 }
-:root[data-fontpair="editorial"] .person .name { font-style: italic; }
 .person .aff {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  line-height: 1.5;
+  font-family: var(--body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--fg-soft);
+  opacity: 0.8;
+  margin-top: -6px;
 }
 
 /* ============================================================ sponsors */
