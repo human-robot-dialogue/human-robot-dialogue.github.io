@@ -626,8 +626,8 @@ function Committees() {
   return (
     <section id="organizers">
       <div className="container committees">
-        <Committee id="organizing" label="Organizing committee" people={ORGANIZERS} role="Organizer" />
-        <Committee id="advisory"   label="Advisory committee"   people={ADVISORY}   role="Advisory" />
+        <Committee id="organizing" label="Organizers"           people={ORGANIZERS} />
+        <Committee id="advisory"   label="Advisory committee"   people={ADVISORY} />
       </div>
     </section>
   );

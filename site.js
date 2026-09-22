@@ -785,14 +785,12 @@ function Committees() {
     className: "container committees"
   }, /*#__PURE__*/React.createElement(Committee, {
     id: "organizing",
-    label: "Organizing committee",
-    people: ORGANIZERS,
-    role: "Organizer"
+    label: "Organizers",
+    people: ORGANIZERS
   }), /*#__PURE__*/React.createElement(Committee, {
     id: "advisory",
     label: "Advisory committee",
-    people: ADVISORY,
-    role: "Advisory"
+    people: ADVISORY
   })));
 }
 function Sponsors() {
