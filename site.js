@@ -174,7 +174,7 @@ const PROGRAM = [{
 }, {
   t: "11:45 – 12:25",
   title: "The future of human–robot dialogue",
-  speakers: ["Gabriel Skantze", "Matthew Marge"],
+  speakers: ["Jesse Thomason", "Bahar Irfan", "Gabriel Skantze", "Matthew Marge"],
   kind: "panel"
 }, {
   t: "12:25 – 12:30",
@@ -754,8 +754,7 @@ function Speakers() {
     className: "people-grid"
   }, SPEAKERS.map(p => /*#__PURE__*/React.createElement(Person, {
     key: p.name,
-    p: p,
-    role: p.role || "Speaker"
+    p: p
   })))));
 }
 function Committee({

@@ -105,7 +105,7 @@ const PROGRAM = [
   { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", speakers: ["Jesse Thomason"], kind: "invited" },
   { t: "10:05 – 11:15", title: "Poster session & coffee break",                                      who: "Accepted papers", kind: "break" },
   { t: "11:15 – 11:45", title: "Detecting User Enjoyment in Conversations to Recover from Failures", speakers: ["Bahar Irfan"],    kind: "invited" },
-  { t: "11:45 – 12:25", title: "The future of human–robot dialogue",                                 speakers: ["Gabriel Skantze", "Matthew Marge"], kind: "panel" },
+  { t: "11:45 – 12:25", title: "The future of human–robot dialogue",                                 speakers: ["Jesse Thomason", "Bahar Irfan", "Gabriel Skantze", "Matthew Marge"], kind: "panel" },
   { t: "12:25 – 12:30", title: "Awards & closing remarks",                                           who: "Organizers",      kind: "open" },
 ];
 
@@ -601,7 +601,7 @@ function Speakers() {
         <SectionHead label="Speakers & Panelists" />
         <div className="people-grid">
           {SPEAKERS.map((p) => (
-            <Person key={p.name} p={p} role={p.role || "Speaker"} />
+            <Person key={p.name} p={p} />
           ))}
         </div>
       </div>
