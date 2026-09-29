@@ -114,6 +114,10 @@ const ORGANIZERS = [{
   name: "Ishika Singh",
   aff: "NVIDIA, USA",
   photo: "photos/ishika-singh.jpg"
+}, {
+  name: "Michal Lewkowicz",
+  aff: "MIT, USA",
+  photo: "photos/michal-lewkowicz.jpg"
 }];
 const ADVISORY = [{
   name: "Dilek Hakkani-Tür",
