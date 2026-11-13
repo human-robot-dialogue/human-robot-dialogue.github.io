@@ -39,9 +39,17 @@ const NAV = [{
 }, {
   id: "organizers",
   label: "Committee"
+}, {
+  id: "papers",
+  label: "Papers",
+  href: "papers.html"
 }
 // { id: "sponsors",   label: "Sponsors" },
 ];
+
+// Which page is mounting: index.html (home) or papers.html (papers).
+const PAGE = (document.getElementById("root") || {}).dataset?.page || "home";
+const homeHref = id => PAGE === "home" ? `#${id}` : `index.html#${id}`;
 const TOPICS = [{
   n: "01",
   title: "Motivation",
@@ -209,6 +217,55 @@ const DATES = [{
   label: "Workshop",
   value: "Oct 1, 2026",
   state: "now"
+}];
+const PAPERS = [{
+  title: "Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning",
+  authors: ["Huao Li", "Carson Sobolewski", "Augustinos D Saravanos", "Yew Teck Tan", "John Karigiannis", "Chuchu Fan"]
+}, {
+  title: "EDITH: Teaching Robot to Follow Nonverbal Human Intent from Egocentric Vision and Gaze",
+  authors: ["Dongjun Lee", "Juheon Choi", "Dong Kyu Shin", "Sinjae Kang", "Kimin Lee"]
+}, {
+  title: "Task Execution Style: Open-Ended Variation in Robot Task Execution Requires Open-Vocabulary Language Grounding",
+  authors: ["Sonny George", "Adriana Kovashka"]
+}, {
+  title: "Same Action, Different Style: Can Vision-Language Models Tell How an Action Is Performed?",
+  authors: ["Kolja Hribar", "Adriana Kovashka"]
+}, {
+  title: "When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence",
+  authors: ["Eshika Pathak", "Leela Krishna"]
+}, {
+  title: "An Evaluation Framework Using Latency and Dialogue Quality for Local LLMs on Social Robots",
+  authors: ["Juan Carlos Ortega Quezada", "Henny Admoni", "Mackenzie Madeline Stewart"]
+}, {
+  title: "Calibrated Clarification: A Computational Maxim of Quantity for Grounding Under-Specified Human Intent",
+  authors: ["Mehul Menon", "Ruixuan Liu", "Philip Huang", "Jiaoyang Li", "Changliu Liu"]
+}, {
+  title: "Knowing When to Ask: Resolving Uncertainty in Human-Robot Joint Planning via Explicit Dialogue and Implicit Intent Cues",
+  authors: ["Zeyu Fang", "Yuxin Lin", "Cheng Liu", "Beomyeol Yu", "Zeyuan Yang", "Rongqian Chen", "Taeyoung Lee", "Mahdi Imani", "Tian Lan"]
+}, {
+  title: "Towards an Extensible Benchmark for Spoken Dialogue with Social Robots",
+  authors: ["Casey Kennington", "Ross Mead", "Saad Elbeleidy", "Jesse Thomason"]
+}, {
+  title: "Persistent Long-Term Memory in Conversational AI Agents: Retrieval Thresholds as a Dominant Determinant of Memory Quality",
+  authors: ["Subodh Kumar Nannapaneni", "Jyothi Nannapaneni"]
+}, {
+  title: "Embodied Multi-Agent Coordination by Aligning World Models Through Dialogue",
+  authors: ["Vardhan Dongre", "Dilek Hakkani-Tür"]
+}, {
+  title: "Continual Robot Skill and Task Learning via Dialogue",
+  authors: ["Weiwei Gu", "N Suresh K Kondepudi", "Anmol Gupta", "Lixiao Huang", "Nakul Gopalan"]
+}, {
+  title: "From Wizard-of-Oz Human–Robot Dialogue Collection to a Taxonomy of Robot Response Decisions: A Retrospective Analysis of Assistive Pilot Interactions",
+  authors: ["Guangping Liu", "Nicholas Hawkins", "Tipu Sultan", "Flavio Esposito", "Madi Babaiasl"]
+}, {
+  title: "Dynamic Task Allocation with Dialogue",
+  authors: ["Matthew Groholski", "Weiwei Gu", "Nakul Gopalan"]
+}, {
+  title: "Why Did the Robot Fail? Causal Concept Bottlenecks for Failure Detection and Explanation",
+  authors: ["Mihir Parekh", "Michelle D Zhao"]
+}, {
+  title: "Vizij × Retico: A Reference Implementation for Driving Expressive Rendered Faces from Incremental Human-Robot Dialogue",
+  authors: ["Saad Elbeleidy", "Ross Mead", "Casey Kennington"]
 }];
 
 /* ================================================================ utils */
@@ -476,7 +533,7 @@ function Nav({
   }, /*#__PURE__*/React.createElement("div", {
     className: "container nav-inner"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#top",
+    href: PAGE === "home" ? "#top" : "index.html",
     className: "brand"
   }, /*#__PURE__*/React.createElement(HRDLogo, {
     size: 26
@@ -494,7 +551,7 @@ function Nav({
     className: "nav-links"
   }, NAV.map(n => /*#__PURE__*/React.createElement("a", {
     key: n.id,
-    href: `#${n.id}`
+    href: n.href || homeHref(n.id)
   }, n.label))), /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "theme-toggle",
@@ -657,18 +714,18 @@ function CFP() {
     className: "container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "cfp-card"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("p", null, "We invite 2–4 page extended abstracts and 4–8 page papers (suggested page limits), in standard two-column IEEE Conference Manuscript Template."), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("p", null, "We invite 2\u20134 page extended abstracts and 4\u20138 page papers (suggested page limits), in standard two-column IEEE Conference Manuscript Template."), /*#__PURE__*/React.createElement("p", {
     className: "cfp-anon"
   }, /*#__PURE__*/React.createElement("strong", null, "Review policy \u2014 single-blind:"), " in line with IROS 2026 rules, submissions should ", /*#__PURE__*/React.createElement("em", null, "not"), " be anonymized. Include all author names and affiliations on the manuscript; reviewer identities remain confidential, and reviewers are required to treat submitted material as confidential."), /*#__PURE__*/React.createElement("p", {
     className: "cfp-nonarchival"
   }, /*#__PURE__*/React.createElement("strong", null, "Non-archival:"), " all submissions will be made available on the workshop website as non-archival reports, making submissions to future conferences and journals possible."), /*#__PURE__*/React.createElement("ul", {
     className: "cfp-dates"
-  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " ", /*#__PURE__*/React.createElement("s", null, "August 3, 2026"), " August 17, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " September 8, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:30 AM – 12:30 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 – October 1, 2026 · Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " ", /*#__PURE__*/React.createElement("s", null, "August 3, 2026"), " August 17, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " September 8, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:30 AM \u2013 12:30 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 \u2013 October 1, 2026 \xB7 Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
     className: "cfp-badge",
     href: "https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/HRD",
     target: "_blank",
     rel: "noopener noreferrer"
-  }, "Submit on OpenReview →"))));
+  }, "Submit on OpenReview \u2192"))));
 }
 function SchedSpeaker({
   name
@@ -742,7 +799,9 @@ function Program() {
       name: n
     }))), r.who && /*#__PURE__*/React.createElement("div", {
       className: "sched-who"
-    }, r.who)));
+    }, r.kind === "break" && r.who === "Accepted papers" ? /*#__PURE__*/React.createElement("a", {
+      href: "papers.html"
+    }, r.who, " \u2192") : r.who)));
   })), /*#__PURE__*/React.createElement("div", {
     className: "sched-note"
   }, "All times Eastern \xB7 Schedule and talk titles are tentative and subject to change.")));
@@ -814,6 +873,32 @@ function Sponsors() {
       marginTop: 24
     }
   }, "Interested in sponsoring? Contact the organizers.")));
+}
+function Papers() {
+  return /*#__PURE__*/React.createElement("section", {
+    id: "papers",
+    className: "papers"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement(SectionHead, {
+    label: "Accepted papers"
+  }, PAPERS.length, " papers will be presented at the poster session on Thursday, October 1, 2026."), /*#__PURE__*/React.createElement("ol", {
+    className: "paper-list"
+  }, PAPERS.map((p, i) => /*#__PURE__*/React.createElement("li", {
+    key: i,
+    className: "paper"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "num"
+  }, String(i + 1).padStart(2, "0")), /*#__PURE__*/React.createElement("div", {
+    className: "paper-body"
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: "paper-title"
+  }, p.title), /*#__PURE__*/React.createElement("div", {
+    className: "paper-authors"
+  }, p.authors.map((a, j) => /*#__PURE__*/React.createElement("span", {
+    key: j,
+    className: "paper-author"
+  }, a)))))))));
 }
 function Footer() {
   return /*#__PURE__*/React.createElement("footer", null, /*#__PURE__*/React.createElement("div", {
@@ -959,6 +1044,15 @@ function App() {
     } catch (e) {}
   }, [t]);
   const toggleTheme = () => setTweak("theme", t.theme === "dark" ? "light" : "dark");
+  if (PAGE === "papers") {
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, {
+      theme: t.theme,
+      onToggleTheme: toggleTheme
+    }), /*#__PURE__*/React.createElement(Papers, null), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(SiteTweaks, {
+      t: t,
+      setTweak: setTweak
+    }));
+  }
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, {
     theme: t.theme,
     onToggleTheme: toggleTheme

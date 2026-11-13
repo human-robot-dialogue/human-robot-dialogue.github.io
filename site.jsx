@@ -5,7 +5,7 @@ const { useState, useEffect, useMemo } = React;
 
 // --- defaults the host can rewrite ---
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "theme": "light",
+  "theme": "dark",
   "accent": "#ff5b35",
   "fontPair": "editorial",
   "heroLayout": "schematic",
@@ -22,8 +22,13 @@ const NAV = [
   { id: "program",    label: "Program" },
   { id: "speakers",   label: "Speakers" },
   { id: "organizers", label: "Committee" },
+  { id: "papers",     label: "Papers", href: "papers.html" },
   // { id: "sponsors",   label: "Sponsors" },
 ];
+
+// Which page is mounting: index.html (home) or papers.html (papers).
+const PAGE = (document.getElementById("root") || {}).dataset?.page || "home";
+const homeHref = (id) => (PAGE === "home" ? `#${id}` : `index.html#${id}`);
 
 const TOPICS = [
   {
@@ -74,25 +79,26 @@ const TOPICS = [
 const SPEAKERS = [
   { name: "Ankit Goyal",     aff: "NVIDIA, USA",                            photo: "photos/ankit.png" },
   { name: "Jacob Andreas",   aff: "MIT, USA",                               photo: "photos/jacob-andreas.jpg" },
-  { name: "Jesse Thomason",  aff: "USC, USA",                               photo: "photos/jesse-thomason.jpg" },
+  { name: "Jesse Thomason",  aff: "Georgia Tech, USA",                      photo: "photos/jesse-thomason.jpg" },
   { name: "Bahar Irfan",     aff: "Familiar Machines & Magic, USA",        photo: "photos/bahar-irfan.jpg" },
   { name: "Gabriel Skantze", aff: "KTH · Furhat Robotics, Sweden",           photo: "photos/gabriel-skantze.jpg", role: "Panelist" },
   { name: "Matthew Marge",   aff: "DARPA, USA",                             photo: "photos/matthew-marge.jpg",   role: "Panelist" },
 ];
 
 const ORGANIZERS = [
-  { name: "Jason Liu",      aff: "Brown University, USA",                  photo: "photos/jason-liu.jpg" },
+  { name: "Jason Liu",      aff: "MIT, USA",                               photo: "photos/jason-liu.jpg" },
   { name: "Vardhan Dongre", aff: "UIUC, USA",                              photo: "photos/vardhan-dongre.jpg" },
   { name: "Rachel Ma",      aff: "MIT, USA",                               photo: "photos/rachel-ma.jpeg" },
   { name: "Xiaolin Fang",   aff: "Google DeepMind",                        photo: "photos/xiaolin-fang.png" },
-  { name: "Abrar Anwar",    aff: "University of Southern California, USA", photo: "photos/abrar-anwar.jpeg" },
-  { name: "Ishika Singh",   aff: "University of Southern California, USA", photo: "photos/ishika-singh.jpg" },
+  { name: "Abrar Anwar",    aff: "NVIDIA, USA",                            photo: "photos/abrar-anwar.jpeg" },
+  { name: "Ishika Singh",   aff: "NVIDIA, USA",                            photo: "photos/ishika-singh.jpg" },
+  { name: "Michal Lewkowicz", aff: "MIT, USA",                             photo: "photos/michal-lewkowicz.jpg" },
 ];
 
 const ADVISORY = [
   { name: "Dilek Hakkani-Tür",     aff: "UIUC, USA",                              photo: "photos/dilek-hakkani-tur.jpeg" },
   { name: "Dylan Hadfield-Menell", aff: "MIT, USA",                               photo: "photos/dylan-hadfield-menell.jpg" },
-  { name: "Jesse Thomason",        aff: "University of Southern California, USA", photo: "photos/jesse-thomason.jpg" },
+  { name: "Jesse Thomason",        aff: "Georgia Tech, USA",                      photo: "photos/jesse-thomason.jpg" },
   { name: "Stefanie Tellex",       aff: "Brown University, USA",                  photo: "photos/stefanie-tellex.jpg" },
   { name: "Andreea Bobu",          aff: "MIT, USA",                               photo: "photos/andreea-bobu.jpg" },
   { name: "Julie Shah",            aff: "MIT, USA",                               photo: "photos/julie-shah.jpg" },
@@ -116,6 +122,41 @@ const DATES = [
   { label: "Notification",     value: "Sept 6, 2026",  state: "open" },
   { label: "Final version",    value: "Sept 30, 2026", state: "open" },
   { label: "Workshop",         value: "Oct 1, 2026",   state: "now" },
+];
+
+const PAPERS = [
+  { title: "Bayesian Active Learning for Intent Disambiguation in Interactive Robot Planning",
+    authors: ["Huao Li", "Carson Sobolewski", "Augustinos D Saravanos", "Yew Teck Tan", "John Karigiannis", "Chuchu Fan"] },
+  { title: "EDITH: Teaching Robot to Follow Nonverbal Human Intent from Egocentric Vision and Gaze",
+    authors: ["Dongjun Lee", "Juheon Choi", "Dong Kyu Shin", "Sinjae Kang", "Kimin Lee"] },
+  { title: "Task Execution Style: Open-Ended Variation in Robot Task Execution Requires Open-Vocabulary Language Grounding",
+    authors: ["Sonny George", "Adriana Kovashka"] },
+  { title: "Same Action, Different Style: Can Vision-Language Models Tell How an Action Is Performed?",
+    authors: ["Kolja Hribar", "Adriana Kovashka"] },
+  { title: "When Should a Failing Robot Ask? Initiating Corrective Human-Robot Dialogue from Audited Sensor Evidence",
+    authors: ["Eshika Pathak", "Leela Krishna"] },
+  { title: "An Evaluation Framework Using Latency and Dialogue Quality for Local LLMs on Social Robots",
+    authors: ["Juan Carlos Ortega Quezada", "Henny Admoni", "Mackenzie Madeline Stewart"] },
+  { title: "Calibrated Clarification: A Computational Maxim of Quantity for Grounding Under-Specified Human Intent",
+    authors: ["Mehul Menon", "Ruixuan Liu", "Philip Huang", "Jiaoyang Li", "Changliu Liu"] },
+  { title: "Knowing When to Ask: Resolving Uncertainty in Human-Robot Joint Planning via Explicit Dialogue and Implicit Intent Cues",
+    authors: ["Zeyu Fang", "Yuxin Lin", "Cheng Liu", "Beomyeol Yu", "Zeyuan Yang", "Rongqian Chen", "Taeyoung Lee", "Mahdi Imani", "Tian Lan"] },
+  { title: "Towards an Extensible Benchmark for Spoken Dialogue with Social Robots",
+    authors: ["Casey Kennington", "Ross Mead", "Saad Elbeleidy", "Jesse Thomason"] },
+  { title: "Persistent Long-Term Memory in Conversational AI Agents: Retrieval Thresholds as a Dominant Determinant of Memory Quality",
+    authors: ["Subodh Kumar Nannapaneni", "Jyothi Nannapaneni"] },
+  { title: "Embodied Multi-Agent Coordination by Aligning World Models Through Dialogue",
+    authors: ["Vardhan Dongre", "Dilek Hakkani-Tür"] },
+  { title: "Continual Robot Skill and Task Learning via Dialogue",
+    authors: ["Weiwei Gu", "N Suresh K Kondepudi", "Anmol Gupta", "Lixiao Huang", "Nakul Gopalan"] },
+  { title: "From Wizard-of-Oz Human–Robot Dialogue Collection to a Taxonomy of Robot Response Decisions: A Retrospective Analysis of Assistive Pilot Interactions",
+    authors: ["Guangping Liu", "Nicholas Hawkins", "Tipu Sultan", "Flavio Esposito", "Madi Babaiasl"] },
+  { title: "Dynamic Task Allocation with Dialogue",
+    authors: ["Matthew Groholski", "Weiwei Gu", "Nakul Gopalan"] },
+  { title: "Why Did the Robot Fail? Causal Concept Bottlenecks for Failure Detection and Explanation",
+    authors: ["Mihir Parekh", "Michelle D Zhao"] },
+  { title: "Vizij × Retico: A Reference Implementation for Driving Expressive Rendered Faces from Incremental Human-Robot Dialogue",
+    authors: ["Saad Elbeleidy", "Ross Mead", "Casey Kennington"] },
 ];
 
 /* ================================================================ utils */
@@ -273,7 +314,7 @@ function Nav({ theme, onToggleTheme }) {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a href="#top" className="brand">
+        <a href={PAGE === "home" ? "#top" : "index.html"} className="brand">
           <HRDLogo size={26} />
           <span>HRD&nbsp;·&nbsp;IROS&nbsp;2026</span>
           <img src="iros-logo.png"      alt="IROS 2026" className="brand-logo brand-logo--dark" />
@@ -282,7 +323,7 @@ function Nav({ theme, onToggleTheme }) {
         <div className="nav-right">
           <nav className="nav-links">
             {NAV.map((n) => (
-              <a key={n.id} href={`#${n.id}`}>{n.label}</a>
+              <a key={n.id} href={n.href || homeHref(n.id)}>{n.label}</a>
             ))}
           </nav>
           <button
@@ -429,9 +470,7 @@ function Topics() {
   return (
     <section id="topics">
       <div className="container">
-        <SectionHead label="Discussion topics">
-          The questions we&rsquo;re putting on the table.
-        </SectionHead>
+        <SectionHead label="Discussion topics" />
         <div className="topic-list">
           {TOPICS.map((t) => (
             <div className="topic" key={t.n}>
@@ -472,9 +511,6 @@ function CFP() {
   return (
     <section id="cfp">
       <div className="container">
-        <SectionHead label="Call for papers">
-          Contributions that push the field.
-        </SectionHead>
         <div className="cfp-card">
           <div>
             <h3>Call for Papers</h3>
@@ -580,7 +616,13 @@ function Program() {
                       {r.speakers.map((n) => <SchedSpeaker key={n} name={n} />)}
                     </div>
                   )}
-                  {r.who && <div className="sched-who">{r.who}</div>}
+                  {r.who && (
+                    <div className="sched-who">
+                      {r.kind === "break" && r.who === "Accepted papers"
+                        ? <a href="papers.html">{r.who} &rarr;</a>
+                        : r.who}
+                    </div>
+                  )}
                 </div>
               </li>
             );
@@ -648,6 +690,34 @@ function Sponsors() {
         <div className="sched-note" style={{ marginTop: 24 }}>
           Interested in sponsoring? Contact the organizers.
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Papers() {
+  return (
+    <section id="papers" className="papers">
+      <div className="container">
+        <SectionHead label="Accepted papers">
+          {PAPERS.length} papers will be presented at the poster session
+          on Thursday, October 1, 2026.
+        </SectionHead>
+        <ol className="paper-list">
+          {PAPERS.map((p, i) => (
+            <li key={i} className="paper">
+              <div className="num">{String(i + 1).padStart(2, "0")}</div>
+              <div className="paper-body">
+                <h3 className="paper-title">{p.title}</h3>
+                <div className="paper-authors">
+                  {p.authors.map((a, j) => (
+                    <span key={j} className="paper-author">{a}</span>
+                  ))}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
@@ -781,6 +851,17 @@ function App() {
   }, [t]);
 
   const toggleTheme = () => setTweak("theme", t.theme === "dark" ? "light" : "dark");
+
+  if (PAGE === "papers") {
+    return (
+      <>
+        <Nav theme={t.theme} onToggleTheme={toggleTheme} />
+        <Papers />
+        <Footer />
+        <SiteTweaks t={t} setTweak={setTweak} />
+      </>
+    );
+  }
 
   return (
     <>
