@@ -654,21 +654,6 @@ function Overview() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "overview-grid"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "label mono",
-    style: {
-      paddingTop: 10
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "inline-block",
-      width: 22,
-      height: 1,
-      background: "var(--accent)",
-      verticalAlign: "middle",
-      marginRight: 12,
-      transform: "translateY(-2px)"
-    }
-  }), "About"), /*#__PURE__*/React.createElement("div", {
     className: "overview-body"
   }, /*#__PURE__*/React.createElement("p", null, "We have seen tremendous progress in robot learning to solve complex tasks in various environments. With the rapid advances of large language models (LLMs) and vision-language models (VLMs), robots are becoming more capable of understanding tasks specified by natural language from humans. While most robot learning works focus on unidirectional communication from humans to robots,", " ", /*#__PURE__*/React.createElement("em", {
     className: "accent"

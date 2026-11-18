@@ -416,14 +416,6 @@ function Overview() {
     <section id="overview">
       <div className="container">
         <div className="overview-grid">
-          <div className="label mono" style={{ paddingTop: 10 }}>
-            <span style={{
-              display: "inline-block", width: 22, height: 1,
-              background: "var(--accent)", verticalAlign: "middle",
-              marginRight: 12, transform: "translateY(-2px)"
-            }} />
-            About
-          </div>
           <div className="overview-body">
             <p>
               We have seen tremendous progress in robot learning to solve complex
