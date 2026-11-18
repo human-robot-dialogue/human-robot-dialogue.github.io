@@ -105,13 +105,13 @@ const ADVISORY = [
 ];
 
 const PROGRAM = [
-  { t: "08:30 – 08:35", title: "Introduction",                                                       who: "Organizers",      kind: "open" },
-  { t: "08:35 – 09:05", title: "From Ambiguous Instructions to Grounded Actions: Reasoning for Robot Foundation Models", speakers: ["Ankit Goyal"], kind: "invited" },
-  { t: "09:05 – 09:35", title: "Just Asking Questions",                                              speakers: ["Jacob Andreas"],  kind: "invited", note: "Remote" },
-  { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", speakers: ["Jesse Thomason"], kind: "invited" },
+  { t: "08:30 – 08:35", title: "Introduction",                                                       who: "Organizers",      kind: "open", video: "https://www.youtube.com/watch?v=HnZkoN4u6RI" },
+  { t: "08:35 – 09:05", title: "From Ambiguous Instructions to Grounded Actions: Reasoning for Robot Foundation Models", speakers: ["Ankit Goyal"], kind: "invited", video: "https://www.youtube.com/watch?v=cVGp0flPY2g" },
+  { t: "09:05 – 09:35", title: "Just Asking Questions",                                              speakers: ["Jacob Andreas"],  kind: "invited", note: "Remote", video: "https://www.youtube.com/watch?v=z2WfgSTJhEs" },
+  { t: "09:35 – 10:05", title: "Grounding Language in Actions, Multimodal Observations, and Robots", speakers: ["Jesse Thomason"], kind: "invited", video: "https://www.youtube.com/watch?v=-kjEIzdre18" },
   { t: "10:05 – 11:15", title: "Poster session & coffee break",                                      who: "Accepted papers", kind: "break" },
-  { t: "11:15 – 11:45", title: "Detecting User Enjoyment in Conversations to Recover from Failures", speakers: ["Bahar Irfan"],    kind: "invited" },
-  { t: "11:45 – 12:25", title: "The future of human–robot dialogue",                                 speakers: ["Jesse Thomason", "Bahar Irfan", "Gabriel Skantze", "Matthew Marge"], kind: "panel" },
+  { t: "11:15 – 11:45", title: "Detecting User Enjoyment in Conversations to Recover from Failures", speakers: ["Bahar Irfan"],    kind: "invited", video: "https://www.youtube.com/watch?v=tsqIH2b2Fh4" },
+  { t: "11:45 – 12:25", title: "The future of human–robot dialogue",                                 speakers: ["Jesse Thomason", "Bahar Irfan", "Gabriel Skantze", "Matthew Marge"], kind: "panel", video: "https://www.youtube.com/watch?v=tsh_QY4WKng" },
   { t: "12:25 – 12:30", title: "Awards & closing remarks",                                           who: "Organizers",      kind: "open" },
 ];
 
@@ -622,6 +622,11 @@ function Program() {
                         ? <a href="papers.html">{r.who} &rarr;</a>
                         : r.who}
                     </div>
+                  )}
+                  {r.video && (
+                    <a className="sched-video" href={r.video} target="_blank" rel="noopener noreferrer">
+                      <span aria-hidden="true">&#9654;</span> Watch recording
+                    </a>
                   )}
                 </div>
               </li>

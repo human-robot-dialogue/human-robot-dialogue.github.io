@@ -1163,6 +1163,20 @@ footer {
   margin: 0 10px;
 }
 .sched-who a { color: var(--accent); }
+
+.sched-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.sched-video span { font-size: 10px; }
+.sched-video:hover { text-decoration: underline; }
+.sched-row.kind-open .sched-video { margin-top: 8px; }
 .sched-who a:hover { text-decoration: underline; }
 @media (max-width: 820px) {
   .paper { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
