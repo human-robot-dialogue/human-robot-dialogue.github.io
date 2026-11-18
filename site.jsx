@@ -225,7 +225,6 @@ function Person({ p, role }) {
 function SectionHead({ label, children }) {
   return (
     <div className="section-head">
-      <div className="kicker" aria-hidden="true" />
       <div className="section-head-body">
         <h2>{label}</h2>
         {children && <p className="section-sub">{children}</p>}
@@ -514,6 +513,10 @@ function CFP() {
         <div className="cfp-card">
           <div>
             <h3>Call for Papers</h3>
+            <p className="cfp-nonarchival">
+              <strong>The call for papers is now closed.</strong> Thank you to
+              everyone who submitted. See the <a href="papers.html">accepted papers</a>.
+            </p>
             <p>
               We welcome short and long papers on human-robot dialogue, language
               grounding, embodied communication, dialogue policy learning,
@@ -544,13 +547,8 @@ function CFP() {
               <li><strong>IROS 2026 conference:</strong> September 27 &ndash; October 1, 2026 &middot; Pittsburgh, PA, USA</li>
             </ul>
           </div>
-          <a
-            className="cfp-badge"
-            href="https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/HRD"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Submit on OpenReview &rarr;
+          <a className="cfp-badge" href="papers.html">
+            Submissions closed &middot; Accepted papers &rarr;
           </a>
         </div>
       </div>

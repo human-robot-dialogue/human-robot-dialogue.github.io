@@ -461,12 +461,6 @@ section:last-of-type { padding-bottom: var(--gap-section); }
   border-bottom: 1px solid var(--rule);
   margin-bottom: var(--gap-block);
 }
-.section-head .kicker {
-  width: 36px;
-  height: 1px;
-  background: var(--accent);
-  margin-bottom: 28px;
-}
 .section-head h2 {
   font-size: clamp(36px, 5vw, 72px);
   line-height: 0.98;
@@ -645,6 +639,7 @@ section:last-of-type { padding-bottom: var(--gap-section); }
 .cfp-nonarchival strong,
 .cfp-anon strong { color: var(--fg); font-weight: 600; }
 .cfp-anon { border-left-color: var(--rule); }
+.cfp-nonarchival a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .cfp-dates {
   list-style: none;
   margin-top: 20px;

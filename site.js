@@ -385,9 +385,6 @@ function SectionHead({
   return /*#__PURE__*/React.createElement("div", {
     className: "section-head"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "kicker",
-    "aria-hidden": "true"
-  }), /*#__PURE__*/React.createElement("div", {
     className: "section-head-body"
   }, /*#__PURE__*/React.createElement("h2", null, label), children && /*#__PURE__*/React.createElement("p", {
     className: "section-sub"
@@ -720,7 +717,11 @@ function CFP() {
     className: "container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "cfp-card"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("p", null, "We invite 2\u20134 page extended abstracts and 4\u20138 page papers (suggested page limits), in standard two-column IEEE Conference Manuscript Template."), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Call for Papers"), /*#__PURE__*/React.createElement("p", {
+    className: "cfp-nonarchival"
+  }, /*#__PURE__*/React.createElement("strong", null, "The call for papers is now closed."), " Thank you to everyone who submitted. See the ", /*#__PURE__*/React.createElement("a", {
+    href: "papers.html"
+  }, "accepted papers"), "."), /*#__PURE__*/React.createElement("p", null, "We welcome short and long papers on human-robot dialogue, language grounding, embodied communication, dialogue policy learning, evaluation, datasets, and adjacent topics."), /*#__PURE__*/React.createElement("p", null, "We invite 2\u20134 page extended abstracts and 4\u20138 page papers (suggested page limits), in standard two-column IEEE Conference Manuscript Template."), /*#__PURE__*/React.createElement("p", {
     className: "cfp-anon"
   }, /*#__PURE__*/React.createElement("strong", null, "Review policy \u2014 single-blind:"), " in line with IROS 2026 rules, submissions should ", /*#__PURE__*/React.createElement("em", null, "not"), " be anonymized. Include all author names and affiliations on the manuscript; reviewer identities remain confidential, and reviewers are required to treat submitted material as confidential."), /*#__PURE__*/React.createElement("p", {
     className: "cfp-nonarchival"
@@ -728,10 +729,8 @@ function CFP() {
     className: "cfp-dates"
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Submission deadline:"), " ", /*#__PURE__*/React.createElement("s", null, "August 3, 2026"), " August 17, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Paper notification:"), " September 8, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Final version deadline:"), " September 30, 2026"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Workshop date:"), " Thursday, October 1, 2026 (Half-Day, 8:30 AM \u2013 12:30 PM EDT)"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "IROS 2026 conference:"), " September 27 \u2013 October 1, 2026 \xB7 Pittsburgh, PA, USA"))), /*#__PURE__*/React.createElement("a", {
     className: "cfp-badge",
-    href: "https://openreview.net/group?id=IEEE.org/IROS/2026/Workshop/HRD",
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, "Submit on OpenReview \u2192"))));
+    href: "papers.html"
+  }, "Submissions closed \xB7 Accepted papers \u2192"))));
 }
 function SchedSpeaker({
   name
