@@ -631,9 +631,6 @@ function Program() {
             );
           })}
         </ol>
-        <div className="sched-note">
-          All times Eastern &middot; Schedule and talk titles are tentative and subject to change.
-        </div>
       </div>
     </section>
   );
@@ -702,10 +699,7 @@ function Papers() {
   return (
     <section id="papers" className="papers">
       <div className="container">
-        <SectionHead label="Accepted papers">
-          {PAPERS.length} papers will be presented at the poster session
-          on Thursday, October 1, 2026.
-        </SectionHead>
+        <SectionHead label="Accepted papers" />
         <ol className="paper-list">
           {PAPERS.map((p, i) => (
             <li key={i} className="paper">

@@ -814,9 +814,7 @@ function Program() {
     }, /*#__PURE__*/React.createElement("span", {
       "aria-hidden": "true"
     }, "\u25B6"), " Watch recording")));
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "sched-note"
-  }, "All times Eastern \xB7 Schedule and talk titles are tentative and subject to change.")));
+  }))));
 }
 function Speakers() {
   return /*#__PURE__*/React.createElement("section", {
@@ -894,7 +892,7 @@ function Papers() {
     className: "container"
   }, /*#__PURE__*/React.createElement(SectionHead, {
     label: "Accepted papers"
-  }, PAPERS.length, " papers will be presented at the poster session on Thursday, October 1, 2026."), /*#__PURE__*/React.createElement("ol", {
+  }), /*#__PURE__*/React.createElement("ol", {
     className: "paper-list"
   }, PAPERS.map((p, i) => /*#__PURE__*/React.createElement("li", {
     key: i,
