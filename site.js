@@ -73,7 +73,7 @@ const TOPICS = [{
 }];
 const SPEAKERS = [{
   name: "Ankit Goyal",
-  aff: "NVIDIA, USA",
+  aff: "Proception · University of Michigan, USA",
   photo: "photos/ankit.png"
 }, {
   name: "Jacob Andreas",

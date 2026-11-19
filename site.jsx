@@ -77,7 +77,7 @@ const TOPICS = [
 ];
 
 const SPEAKERS = [
-  { name: "Ankit Goyal",     aff: "NVIDIA, USA",                            photo: "photos/ankit.png" },
+  { name: "Ankit Goyal",     aff: "Proception · University of Michigan, USA", photo: "photos/ankit.png" },
   { name: "Jacob Andreas",   aff: "MIT, USA",                               photo: "photos/jacob-andreas.jpg" },
   { name: "Jesse Thomason",  aff: "Georgia Tech, USA",                      photo: "photos/jesse-thomason.jpg" },
   { name: "Bahar Irfan",     aff: "Familiar Machines & Magic, USA",        photo: "photos/bahar-irfan.jpg" },
